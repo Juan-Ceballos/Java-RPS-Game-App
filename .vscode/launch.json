@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "RPSGame",
+            "request": "launch",
+            "mainClass": "main.RPSGame",
+            "projectName": "RPS-App_3b9e1334"
+        },
+        {
+            "type": "java",
             "name": "Debug using Hotswap Agent",
             "request": "launch",
             "javaExec": "C:\\Users\\Juan\\.vaadin\\jdk\\jbrsdk-25.0.4-windows-x64-b508.27\\bin\\java.exe",

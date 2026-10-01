@@ -7,9 +7,7 @@ public class GameState {
     private int playerScore = 0;
     private int cpuScore = 0;
 
-    public GameState() {
-        
-    }
+    public GameState() {}
 
     public void increasePlayerScore() {
         playerScore += 1;
