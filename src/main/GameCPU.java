@@ -38,4 +38,13 @@ public abstract class GameCPU {
         return "scissor";
     }
 
+    String makeChoiceBalanced(int choiceRangeNum) {
+       if (choiceRangeNum <= rockIndex) {
+            return "rock";
+        } else if (choiceRangeNum <= paperIndex) {
+            return "paper";
+        }
+        return "scissor"; 
+    }
+
 }
