@@ -6,7 +6,9 @@ package main;
 public class GameState {
     private int playerScore = 0;
     private int cpuScore = 0;
-    private String startPrompt = "Game Start, choosing CPU opponent!";
+    private int highScore; // add with persistance 
+    private String startGauntletPrompt = "Welcome to the rock, paper, scissor gauntlet, you will face four opponents. It's first to ten! Loose to one opponent and you start all over!";
+    private String gameModePrompt = "1. Gauntlet%n2. Select Opponent";
 
     public GameState() {}
 
