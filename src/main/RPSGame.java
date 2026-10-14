@@ -13,5 +13,7 @@ public class RPSGame {
         System.out.println("Enter Choice");
         String choice = myObj.nextLine();
         System.out.println("you chose:" + choice);
+        gs.runGauntletGame("choice");
+        
     }
 }
