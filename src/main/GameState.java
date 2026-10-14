@@ -14,6 +14,8 @@ public class GameState {
     private final int rock = 0;
     private final int paper = 1;
     private final int scissor = 2;
+    private boolean isPlayerWinner;
+    private boolean isCPUWinner;
 
 
     private int highScore; // add with persistance 
