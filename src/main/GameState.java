@@ -15,7 +15,7 @@ public class GameState {
     private final int paper = 1;
     private final int scissor = 2;
     private boolean isPlayerWinner;
-    private boolean isCPUWinner;
+    private boolean isPlayerTie;
 
 
     private int highScore; // add with persistance 
@@ -67,32 +67,32 @@ public class GameState {
     }
 
     public void checkRock() {
-        if CPUChoice == Rock {
-            return isTie
-        } else if CPUChoice == Paper {
-            return CPUWins
+        if (cpuChoice == rock) {
+            isPlayerTie = true;
+        } else if (cpuChoice == paper) {
+            isPlayerWinner = false;
         } else {
-            return PlayerWins
+            isPlayerWinner = true;
         }
     }
 
     public void checkPaper() {
-        if CPUChoice == Rock {
-            return isTie
-        } else if CPUChoice == Paper {
-            return CPUWins
+        if (cpuChoice == paper) {
+            isPlayerTie = true;
+        } else if (cpuChoice == scissor) {
+            isPlayerWinner = false; 
         } else {
-            return PlayerWins
+            isPlayerWinner = true;
         }
     }
 
     public void checkScissor() {
-        if CPUChoice == Rock {
-            return isTie
-        } else if CPUChoice == Paper {
-            return CPUWins
+        if (cpuChoice == scissor) {
+            isPlayerTie = true;
+        } else if (cpuChoice == rock) {
+            isPlayerWinner = false;
         } else {
-            return PlayerWins
+            isPlayerWinner = true;
         }
     }
 
