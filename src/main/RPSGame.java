@@ -5,15 +5,18 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class RPSGame {
     public static void main(String[] args) {
-        System.out.println("Start Game");
+        // int randomNum = ThreadLocalRandom.current().nextInt(0, 3);
+        // System.out.println(randomNum); 
+        // Scanner myObj = new Scanner(System.in);
+        // System.out.println("Enter Choice");
+        // System.out.println("you chose:" + choice);
+        // String choice = myObj.nextLine();
         GameState gs = new GameState();
-        int randomNum = ThreadLocalRandom.current().nextInt(0, 3);
-        System.out.println(randomNum); 
-        Scanner myObj = new Scanner(System.in);
-        System.out.println("Enter Choice");
-        String choice = myObj.nextLine();
-        System.out.println("you chose:" + choice);
-        gs.runGauntletGame("choice");
+        // GameCPU gc = new GameCPU(){};
+        RPSGame rpg = new RPSGame();
+        System.out.println("Start Game");
+        System.out.println("Your first opponent is: Rocky");
         
+
     }
 }

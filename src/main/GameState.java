@@ -14,6 +14,7 @@ public class GameState {
     private final int rock = 0;
     private final int paper = 1;
     private final int scissor = 2;
+    private int gauntletRound = 0;
     private boolean isPlayerWinner;
     private boolean isPlayerTie;
     private boolean playerWon;
@@ -29,18 +30,7 @@ public class GameState {
     private String cpuPlayerBoss;
     private String playerName;
 
-
     public GameState() {}
-
-    private String declareWinnerRound(String cpuName) {
-        if (isPlayerWinner) {
-            return winningPrompt + playerName;
-        } else if (isPlayerTie) {
-            return tiePrompt;
-        } else {
-            return winningPrompt + cpuName;
-        }
-    }
 
     private void increasePlayerScore() {
         playerScore += scoredPoint;
@@ -109,6 +99,15 @@ public class GameState {
         }
     }
 
+    private String declareWinnerRound(String cpuName) {
+        if (isPlayerWinner) {
+            return winningPrompt + playerName;
+        } else if (isPlayerTie) {
+            return tiePrompt;
+        } else {
+            return winningPrompt + cpuName;
+        }
+    }
 
     public void runGauntletGame(String cpuOpponent) {
         System.out.println(opponentPrompt + cpuOpponent);
@@ -120,7 +119,4 @@ public class GameState {
         System.out.println(playerScore); 
     }
 
-    public void runSelectGame() {
-
-    }
 }
