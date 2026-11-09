@@ -130,7 +130,7 @@ public class GameState {
         }
     }
 
-    public v                oid runGauntletGame(String cpuOpponent) {
+    public void runGauntletGame(String cpuOpponent) {
         System.out.println(opponentPrompt + cpuOpponent);
         while (getPlayerScore() < winningScore || getCPUScore() < winningScore) {
             

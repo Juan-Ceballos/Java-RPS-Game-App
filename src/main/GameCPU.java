@@ -11,40 +11,54 @@ public abstract class GameCPU {
 
     public GameCPU() {}
 
-    String makeChoiceRock(int choiceRangeNum) {
-        if (choiceRangeNum <= rockIndex + weight) {
-            return "rock";
-        } else if (choiceRangeNum <= paperIndex + weight) {
-            return "paper";
+    abstract String makeChoice(int choiceRangeNum);
+
+    class RockCPU extends GameCPU {
+        public RockCPU() {}
+        String makeChoice(int choiceRangeNum) {
+            if (choiceRangeNum <= rockIndex + weight) {
+                return "rock";
+            } else if (choiceRangeNum <= paperIndex + weight) {
+                return "paper";
+            }
+            return "scissor";
         }
-        return "scissor";
     }
 
-    String makeChoicePaper(int choiceRangeNum) {
-        if (choiceRangeNum <= rockIndex - weight) {
-            return "rock";
-        } else if (choiceRangeNum <= paperIndex) {
-            return "paper";
+    class PaperCPU extends GameCPU {
+        public PaperCPU() {}
+        String makeChoice(int choiceRangeNum) {
+            if (choiceRangeNum <= rockIndex - weight) {
+                return "rock";
+            } else if (choiceRangeNum <= paperIndex) {
+                return "paper";
+            }
+            return "scissor";
         }
-        return "scissor";
     }
 
-    String makeChoiceScissor(int choiceRangeNum) {
-        if (choiceRangeNum <= rockIndex) {
-            return "rock";
-        } else if (choiceRangeNum <= paperIndex - weight) {
-            return "paper";
+    class ScissorsCPU extends GameCPU {
+        public ScissorsCPU() {}
+        String makeChoice(int choiceRangeNum) {
+            if (choiceRangeNum <= rockIndex) {
+                return "rock";
+            } else if (choiceRangeNum <= paperIndex - weight) {
+                return "paper";
+            }
+            return "scissor";
         }
-        return "scissor";
     }
 
-    String makeChoiceBalanced(int choiceRangeNum) {
-       if (choiceRangeNum <= rockIndex) {
-            return "rock";
-        } else if (choiceRangeNum <= paperIndex) {
-            return "paper";
+    class BossCPU extends GameCPU {
+        public BossCPU() {}
+        String makeChoice(int choiceRangeNum) {
+            if (choiceRangeNum <= rockIndex) {
+                return "rock";
+            } else if (choiceRangeNum <= paperIndex) {
+                return "paper";
+            }
+            return "scissor"; 
         }
-        return "scissor"; 
     }
-
+    
 }
