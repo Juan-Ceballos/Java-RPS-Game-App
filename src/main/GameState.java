@@ -9,6 +9,10 @@ public class GameState {
     private final int winningScore = 10;
     private final int initialScore = 0;
     private final int scoredPoint = 1;
+    private final int roundOne = 0;
+    private final int roundTwo = 1;
+    private final int roundThree = 2;
+    private final int roundFour = 3;
     private int cpuChoice;
     private int playerChoice;
     private final int rock = 0;
@@ -20,7 +24,6 @@ public class GameState {
     private boolean playerWon;
     private int highScore; // add with persistance 
     private String startGauntletPrompt = "Welcome to the rock, paper, scissor gauntlet, you will face four opponents. It's first to ten! Loose to one opponent and you start all over!";
-    private String gameModePrompt = "Welcome! Pick an option(e.g. 1)%n1. Gauntlet%n2. Select Opponent";
     private String opponentPrompt = "Your oppenent is ";
     private String winningPrompt = "The winner is: ";
     private String tiePrompt = "Tie!";
@@ -28,6 +31,7 @@ public class GameState {
     private String cpuPlayerPipper;
     private String cpuPlayerCutter;
     private String cpuPlayerBoss;
+    private String currentOpponent;
     private String playerName;
 
     public GameState() {}
@@ -67,6 +71,23 @@ public class GameState {
 
     private int getPlayerChoice() {
         return playerChoice;
+    }
+
+    public void startGauntletPrompt() {
+        System.out.println(startGauntletPrompt);
+    }
+
+
+    public void setOpponent(int round) {
+        if (round == roundOne) {
+            currentOpponent = cpuPlayerRocky;
+        } else if (round == roundTwo) {
+            currentOpponent = cpuPlayerPipper;
+        } else if (round == roundThree) {
+            currentOpponent = cpuPlayerCutter;
+        } else {
+            currentOpponent = cpuPlayerBoss;
+        }
     }
 
     public void checkRock() {
@@ -109,7 +130,7 @@ public class GameState {
         }
     }
 
-    public void runGauntletGame(String cpuOpponent) {
+    public v                oid runGauntletGame(String cpuOpponent) {
         System.out.println(opponentPrompt + cpuOpponent);
         while (getPlayerScore() < winningScore || getCPUScore() < winningScore) {
             

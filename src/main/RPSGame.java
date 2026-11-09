@@ -13,10 +13,9 @@ public class RPSGame {
         // String choice = myObj.nextLine();
         GameState gs = new GameState();
         // GameCPU gc = new GameCPU(){};
-        RPSGame rpg = new RPSGame();
-        System.out.println("Start Game");
-        System.out.println("Your first opponent is: Rocky");
+        gs.startGauntletPrompt();
         
+               
 
     }
 }
