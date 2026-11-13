@@ -21,7 +21,8 @@ public class GameState {
     private int gauntletRound = 0;
     private boolean isPlayerWinner;
     private boolean isPlayerTie;
-    private boolean playerWon;
+    private boolean playerWon = false;
+    private boolean cpuWon = false;
     private int highScore; // add with persistance 
     private String startGauntletPrompt = "Welcome to the rock, paper, scissor gauntlet, you will face four opponents. It's first to ten! Loose to one opponent and you start all over!";
     private String opponentPrompt = "Your oppenent is ";
@@ -73,10 +74,45 @@ public class GameState {
         return playerChoice;
     }
 
-    public void startGauntletPrompt() {
-        System.out.println(startGauntletPrompt);
+    public void checkRock() {
+        if (getCPUChoice() == rock) {
+            isPlayerTie = true;
+        } else if (getCPUChoice() == paper) {
+            isPlayerWinner = false;
+        } else {
+            isPlayerWinner = true;
+        }
     }
 
+    public void checkPaper() {
+        if (getCPUChoice() == paper) {
+            isPlayerTie = true;
+        } else if (getCPUChoice() == scissor) {
+            isPlayerWinner = false; 
+        } else {
+            isPlayerWinner = true;
+        }
+    }
+
+    public void checkScissor() {
+        if (getCPUChoice() == scissor) {
+            isPlayerTie = true;
+        } else if (getCPUChoice() == rock) {
+            isPlayerWinner = false;
+        } else {
+            isPlayerWinner = true;
+        }
+    }
+
+    public String declareWinnerRound(String cpuName) {
+        if (isPlayerWinner) {
+            return winningPrompt + playerName;
+        } else if (isPlayerTie) {
+            return tiePrompt;
+        } else {
+            return winningPrompt + cpuName;
+        }
+    }
 
     public void setOpponent(int round) {
         if (round == roundOne) {
@@ -90,54 +126,13 @@ public class GameState {
         }
     }
 
-    public void checkRock() {
-        if (cpuChoice == rock) {
-            isPlayerTie = true;
-        } else if (cpuChoice == paper) {
-            isPlayerWinner = false;
-        } else {
-            isPlayerWinner = true;
+    public void setWinner() {
+        if (getPlayerScore() == 10) {
+            playerWon = true;
+        } else if (getCPUChoice() == 10) {
+            cpuWon = true;
         }
     }
 
-    public void checkPaper() {
-        if (cpuChoice == paper) {
-            isPlayerTie = true;
-        } else if (cpuChoice == scissor) {
-            isPlayerWinner = false; 
-        } else {
-            isPlayerWinner = true;
-        }
-    }
-
-    public void checkScissor() {
-        if (cpuChoice == scissor) {
-            isPlayerTie = true;
-        } else if (cpuChoice == rock) {
-            isPlayerWinner = false;
-        } else {
-            isPlayerWinner = true;
-        }
-    }
-
-    private String declareWinnerRound(String cpuName) {
-        if (isPlayerWinner) {
-            return winningPrompt + playerName;
-        } else if (isPlayerTie) {
-            return tiePrompt;
-        } else {
-            return winningPrompt + cpuName;
-        }
-    }
-
-    public void runGauntletGame(String cpuOpponent) {
-        System.out.println(opponentPrompt + cpuOpponent);
-        while (getPlayerScore() < winningScore || getCPUScore() < winningScore) {
-            
-        }
-        resetScore();
-        System.out.println(cpuScore);
-        System.out.println(playerScore); 
-    }
 
 }
