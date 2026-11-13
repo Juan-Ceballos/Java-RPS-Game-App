@@ -13,7 +13,7 @@ public class RPSGame {
         // String choice = myObj.nextLine();
         GameState gs = new GameState();
         // GameCPU gc = new GameCPU(){};
-        gs.startGauntletPrompt();
+        //gs.startGauntletPrompt();
         
                
 
