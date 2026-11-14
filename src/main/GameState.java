@@ -37,6 +37,10 @@ public class GameState {
 
     public GameState() {}
 
+    public String getOpeningPrompt() {
+        return startGauntletPrompt;
+    }
+
     private void increasePlayerScore() {
         playerScore += scoredPoint;
     }

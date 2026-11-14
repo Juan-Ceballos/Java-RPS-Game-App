@@ -8,13 +8,17 @@ public abstract class GameCPU {
     final String rock = "rock";
     final String Paper = "paper";
     final String Scissor = "scissor";
+    String name;
 
     public GameCPU() {}
 
     abstract String makeChoice(int choiceRangeNum);
 
     class RockCPU extends GameCPU {
-        public RockCPU() {}
+        public RockCPU() {
+            name = "Rocky";
+        }
+
         String makeChoice(int choiceRangeNum) {
             if (choiceRangeNum <= rockIndex + weight) {
                 return "rock";
@@ -26,7 +30,9 @@ public abstract class GameCPU {
     }
 
     class PaperCPU extends GameCPU {
-        public PaperCPU() {}
+        public PaperCPU() {
+            name = "Piper";
+        }
         String makeChoice(int choiceRangeNum) {
             if (choiceRangeNum <= rockIndex - weight) {
                 return "rock";
@@ -38,7 +44,9 @@ public abstract class GameCPU {
     }
 
     class ScissorsCPU extends GameCPU {
-        public ScissorsCPU() {}
+        public ScissorsCPU() {
+            name = "Cutter";
+        }
         String makeChoice(int choiceRangeNum) {
             if (choiceRangeNum <= rockIndex) {
                 return "rock";
