@@ -14,8 +14,8 @@ public class RPSGame {
         GameState gs = new GameState();
         // GameCPU gc = new GameCPU(){};
         //gs.startGauntletPrompt();
-        gs.getOpeningPrompt();
-        
+        System.out.println(gs.getOpeningPrompt());
+        System.out.println(gs.firstOpponentPrompt());
                
 
     }

@@ -25,6 +25,7 @@ public class GameState {
     private boolean cpuWon = false;
     private int highScore; // add with persistance 
     private String startGauntletPrompt = "Welcome to the rock, paper, scissor gauntlet, you will face four opponents. It's first to ten! Loose to one opponent and you start all over!";
+    private String firstOpponentPrompt = "You're first opponent is Rocky Go!";
     private String opponentPrompt = "Your oppenent is ";
     private String winningPrompt = "The winner is: ";
     private String tiePrompt = "Tie!";
@@ -40,6 +41,11 @@ public class GameState {
     public String getOpeningPrompt() {
         return startGauntletPrompt;
     }
+
+    public String firstOpponentPrompt() {
+        return firstOpponentPrompt;
+    }
+
 
     private void increasePlayerScore() {
         playerScore += scoredPoint;
