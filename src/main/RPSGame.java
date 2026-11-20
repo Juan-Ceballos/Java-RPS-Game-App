@@ -4,6 +4,9 @@ import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class RPSGame {
+    private String setRoundOpponent(int round) {
+        return "";
+    }
     public static void main(String[] args) {
         // int randomNum = ThreadLocalRandom.current().nextInt(0, 3);
         // System.out.println(randomNum); 
@@ -16,7 +19,7 @@ public class RPSGame {
         //gs.startGauntletPrompt();
         System.out.println(gs.getOpeningPrompt());
         System.out.println(gs.firstOpponentPrompt());
-               
+        gs.displayGameBoard();
 
     }
 }

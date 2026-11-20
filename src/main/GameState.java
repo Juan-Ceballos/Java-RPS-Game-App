@@ -9,9 +9,7 @@ public class GameState {
     private final int winningScore = 10;
     private final int initialScore = 0;
     private final int scoredPoint = 1;
-    private final int roundOne = 0;
-    private final int roundTwo = 1;
-    private final int roundThree = 2;
+    private int roundCount = 0;
     private final int roundFour = 3;
     private int cpuChoice;
     private int playerChoice;
@@ -34,7 +32,6 @@ public class GameState {
     private String cpuPlayerCutter;
     private String cpuPlayerBoss;
     private String currentOpponent;
-    private String playerName;
 
     public GameState() {}
 
@@ -61,6 +58,11 @@ public class GameState {
 
     private int getCPUScore() {
         return cpuScore;
+    }
+
+    public void displayGameBoard(String roundOpponent) {
+        System.out.println(roundOpponent + ": " + getCPUScore());
+        System.out.println("You: " + getPlayerScore());
     }
 
     private void resetScore() { // might be reset whole game most likely
